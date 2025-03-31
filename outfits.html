@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outfits</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f8f6eb;
+            margin: 0;
+            padding: 0;
+        }
+       
+        .back-btn {
+            padding: 10px;
+            background: #f0d4be;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .outfit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="back-btn" onclick="goBack()">Back</button>
+        <h1>Outfits</h1>
+    </div>
+    <div class="container">
+
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'somewhatdef.html'; // Redirect to main page
+        }
+    </script>
+</body>
+</html>
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif, sans-serif;
+        background-color: #f8f6eb;
+        margin: 0;
+        padding: 20px;
+    }
+    .outfit-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+    .outfit-item {
+        background: #f0d4be;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .outfit-item:hover {
+        transform: scale(1.05);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    }
+    .outfit-item img {
+        max-width: 100px;
+        max-height: 120px;
+    }
+    .navigation-arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 24px;
+        color: #98a48c;
+        cursor: pointer;
+    }
+    .left-arrow {
+        left: -30px;
+    }
+    .right-arrow {
+        right: -30px;
+    }
+</style>
+</head>
+<body><h1>Your Outfits</h1>
+    <div class="outfit-grid">
+        <div class="outfit-item">
+            <span class="navigation-arrows left-arrow">&#x25C0;</span>
+            <img src="top.png" alt="Top">
+            <span class="navigation-arrows right-arrow">&#x25B6;</span>
+        </div>
+        <div class="outfit-item">
+            <span class="navigation-arrows left-arrow">&#x25C0;</span>
+            <img src="jacket.png" alt="Jacket">
+            <span class="navigation-arrows right-arrow">&#x25B6;</span>
+        </div>
+        <div class="outfit-item">
+            <span class="navigation-arrows left-arrow">&#x25C0;</span>
+            <img src="pants.png" alt="Pants">
+            <span class="navigation-arrows right-arrow">&#x25B6;</span>
+        </div>
+        <div class="outfit-item">
+            <span class="navigation-arrows left-arrow">&#x25C0;</span>
+            <img src="bag.png" alt="Bag">
+            <span class="navigation-arrows right-arrow">&#x25B6;</span>
+        </div>
+        <div class="outfit-item">
+            <span class="navigation-arrows left-arrow">&#x25C0;</span>
+            <img src="boots.png" alt="Boots">
+            <span class="navigation-arrows right-arrow">&#x25B6;</span>
+        </div>
+    </div>
+    </body>
+    </html>    

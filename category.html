@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closet Organizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleDropdown() {
+            document.getElementById("dropdown").classList.toggle("hidden");
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.matches('#addButton')) {
+                let dropdown = document.getElementById("dropdown");
+                if (!dropdown.classList.contains("hidden")) {
+                    dropdown.classList.add("hidden");
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#f6f3eb] p-4">
+
+    <!-- Top Navigation -->
+    <div class="flex justify-between items-center bg-[#b0be9f] p-3">
+        <button class="text-3xl text-white">&#9776;</button> 
+        <div class="w-8 h-8 bg-gray-300 rounded-full"></div> 
+    </div>
+
+    <!-- Page Content -->
+    <div class="max-w-3xl mx-auto mt-6">
+        <h1 class="text-2xl font-serif">Your clothes</h1>
+
+        <!-- Outfits Button -->
+        <div class="flex justify-end">
+            <button class="bg-[#e8d7d0] px-4 py-2 rounded-md shadow-md flex items-center space-x-2">
+                <span class="font-serif">outfits</span>
+                <span>➤➤➤</span>
+            </button>
+        </div>
+        <!-- Add Button with Dropdown -->
+        <div class="relative mt-4">
+            <button id="addButton" onclick="toggleDropdown()" 
+                class="w-14 h-14 bg-[#b0be9f] rounded-full flex items-center justify-center text-4xl text-white font-bold">
+                +
+            </button>
+            <div id="dropdown" class="hidden absolute mt-2 bg-white shadow-md rounded-md w-48">
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">📤 Upload a Picture</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">📷 Take a Picture</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">➕ Add Category</button>
+            </div>
+        </div>
+         <!-- Clothing Categories -->
+         <div class="grid grid-cols-4 gap-3 mt-4">
+            <button class="border border-gray-400 rounded-lg p-7 shadow-md font-serif">Tops</button>
+            <button class="border border-gray-400 rounded-lg p-7 shadow-md font-serif">Tshirts</button>
+            <button class="border border-gray-400 rounded-lg p-7 shadow-md font-serif">Shirts</button>
+            <button class="border border-gray-400 rounded-lg p-7 shadow-md font-serif">Tanktops</button>
+        </div>
+
+        <!-- Empty Clothing Slots (Now Buttons) -->
+        <div class="grid grid-cols-4 gap-3 mt-6">
+            <button class="border border-gray-400 rounded-lg p-10 shadow-md"></button>
+            <button class="border border-gray-400 rounded-lg p-10 shadow-md"></button>
+            <button class="border border-gray-400 rounded-lg p-10 shadow-md"></button>
+            <button class="border border-gray-400 rounded-lg p-10 shadow-md"></button>
+        </div>
+    </div>
+
+</body>
+</html>

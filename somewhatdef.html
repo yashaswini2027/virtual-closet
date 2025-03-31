@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closet Organizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function toggleDropdown(event, dropdownId) {
+            event.stopPropagation();
+
+            // Close all dropdowns first
+            document.querySelectorAll(".dropdown-menu").forEach(dropdown => {
+                if (dropdown.id !== dropdownId) {
+                    dropdown.classList.add("hidden");
+                }
+            });
+
+            // Toggle the clicked dropdown
+            document.getElementById(dropdownId).classList.toggle("hidden");
+        }
+
+        // Close all dropdowns when clicking anywhere outside
+        window.onclick = function() {
+            document.querySelectorAll(".dropdown-menu").forEach(dropdown => {
+                dropdown.classList.add("hidden");
+            });
+        };
+    </script>
+</head>
+<body class="bg-[#f6f3eb] p-4">
+
+    <!-- Top Navigation -->
+    <div class="flex justify-between items-center bg-[#b0be9f] p-3 relative">
+        <!-- Left Menu Button with Dropdown -->
+        <div class="relative">
+            <button onclick="toggleDropdown(event, 'menuDropdown')" class="text-3xl text-white">
+                &#9776;
+            </button>
+            <div id="menuDropdown" class="dropdown-menu hidden absolute mt-2 bg-white shadow-md rounded-md w-40">
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">🏠 Home</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">📂 My Closet</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">👗 Outfits</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">📊 Statistics</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">⚙️ Settings</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">❓ Help</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-red-200 text-red-600">🚪 Log Out</button>
+            </div>
+        </div>
+        
+        <!-- Account Button with Dropdown -->
+        <div class="relative">
+            <button onclick="toggleDropdown(event, 'accountDropdown')" class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center shadow-md">
+                👤
+            </button>
+            <div id="accountDropdown" class="dropdown-menu hidden absolute right-0 mt-2 bg-white shadow-md rounded-md w-40">
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">➕ Add Account</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">⚙️ Settings</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">❓ Help</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-red-200 text-red-600">🚪 Log Out</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="max-w-4xl mx-auto mt-6">
+        <h1 class="text-2xl font-serif">Your clothes</h1>
+
+        <!-- Outfits Button -->
+        <div class="flex justify-end">
+            <button onclick="location.href='outfits.html'" class="bg-[#e8d7d0] px-4 py-2 rounded-md shadow-md flex items-center space-x-2">
+                <span class="font-serif">outfits</span>
+                <span>➤➤➤</span>
+            
+            </button>
+        </div>
+
+        <!-- Add Button with Dropdown (Left-Aligned) -->
+        <div class="relative mt-4 flex">
+            <button onclick="toggleDropdown(event, 'addDropdown')" 
+                class="w-14 h-14 bg-[#b0be9f] rounded-full flex items-center justify-center text-white font-bold text-4xl shadow-md">
+                <span class="leading-none text-center">+</span>
+            </button>
+            <div id="addDropdown" class="dropdown-menu hidden absolute mt-2 bg-white shadow-md rounded-md w-48">
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">📤 Upload a Picture</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">📷 Take a Picture</button>
+                <button class="block w-full text-left px-4 py-2 hover:bg-gray-200">➕ Add Category</button>
+            </div>
+        </div>
+
+        <!-- Clothing Categories -->
+        <div class="mt-6">
+            <h2 class="text-lg font-serif mb-2">Categories</h2>
+            <div class="grid grid-cols-5 gap-2">
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md font-serif flex items-center justify-center">Tops</button>
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md font-serif flex items-center justify-center">Tshirts</button>
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md font-serif flex items-center justify-center">Shirts</button>
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md font-serif flex items-center justify-center">Tanktops</button>
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md font-serif flex items-center justify-center">Jeans</button>
+            </div>
+        </div>
+
+        <!-- Empty Slots for New Categories -->
+        <div class="mt-6">
+            <h2 class="text-lg font-serif mb-2">New Categories</h2>
+            <div class="grid grid-cols-5 gap-2">
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md flex items-center justify-center text-gray-500 text-2xl">+</button>
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md flex items-center justify-center text-gray-500 text-2xl">+</button>
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md flex items-center justify-center text-gray-500 text-2xl">+</button>
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md flex items-center justify-center text-gray-500 text-2xl">+</button>
+                <button class="border border-gray-400 rounded-lg w-32 h-32 shadow-md flex items-center justify-center text-gray-500 text-2xl">+</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

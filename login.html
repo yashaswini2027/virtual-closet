@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef0e6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .illustration {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .illustration img {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+        }
+
+        .auth-box {
+            background-color: #c8d5b9;
+            padding: 30px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        .auth-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .auth-box button {
+            width: 100%;
+            background-color: #96a88e;
+            padding: 10px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .toggle {
+            margin-top: 10px;
+            cursor: pointer;
+            color: #5c6f56;
+        }
+    </style>
+    <script>
+        function toggleForm() {
+            const loginForm = document.getElementById("login-form");
+            const signupForm = document.getElementById("signup-form");
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                signupForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                signupForm.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="illustration">
+            <img src="clothingrackpick.jpg" alt="Clothing Rack" width="250" height="250">
+        </div>
+        <div class="auth-box">
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button onclick="location.href='somewhatdef.html'">Login</button>
+                <p class="toggle" onclick="toggleForm()">Don't have an account? Sign up</p>
+            </div>
+            <div id="signup-form" style="display: none;">
+                <h2>Sign Up</h2>
+                <input type="text" placeholder="Username" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button onclick="location.href='login.html'">Sign Up</button>
+                <p class="toggle" onclick="toggleForm()">Already have an account? Login</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
